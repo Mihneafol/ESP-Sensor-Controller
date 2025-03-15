@@ -1,38 +1,38 @@
-  # ESP-Sensor-Controller
- Proiect ESP32  cu Senzori și Interfață Web
-Acest proiect utilizează un ESP32 sau ESP8266 pentru a crea un server web care permite monitorizarea și controlul unui sistem de senzori și actuatori, inclusiv un senzor de temperatură și umiditate (DHT11), un senzor de lumină, un senor IR, și un LED. Sistemul poate fi accesat de pe orice dispozitiv conectat la rețea, oferind o interfață web pentru vizualizarea datelor și controlul LED-ului.
+# ESP-Sensor-Controller
+ESP32 Project with Sensors and Web Interface
 
-   # Componente hardware:
+This project uses an ESP32 or ESP8266 to create a web server that allows the monitoring and control of a sensor and actuator system, including a temperature and humidity sensor (DHT11), a light sensor, an IR sensor, and an LED. The system can be accessed from any network-connected device, offering a web interface for data visualization and LED control.
+
+  # Hardware Components:
 ESP32/ESP8266
-Senzor de temperatură și umiditate DHT11
-Senzor de lumină analogic
-Senzor IR digital
+DHT11 Temperature and Humidity Sensor
+Analog Light Sensor
+Digital IR Sensor
 LED
-Buton pentru schimbarea stării LED-ului
-LCD 16x2 cu I2C pentru vizualizarea datelor local
-   # Funcționalități:
-Monitorizarea temperaturii și umidității: Valorile senzorului DHT11 sunt afișate atât pe LCD cât și pe interfața web.
-Controlul LED-ului: LED-ul poate fi aprins și stins de pe interfața web sau local, printr-un buton.
-Senzor de lumină: Nivelul de lumină ambientala este citit printr-un senzor analogic și afișat pe interfața web.
-Senzor IR: Detectează prezența sau absența obiectelor în apropierea senzorului IR.
-Interfață Web: Permite vizualizarea și controlul senzorilor și LED-ului printr-o pagină web simplă.
-   # Detalii tehnice:
-WiFi: Proiectul folosește rețeaua WiFi pentru a trimite date către un server web și pentru a permite controlul LED-ului de la distanță.
-HTML/JavaScript: Interfața web este construită folosind HTML și JavaScript pentru a actualiza datele într-un interval de 2 secunde, fără a necesita reîncărcarea paginii.
-Debounce: Codul include o implementare de debounce pentru butonul fizic, evitând multiplele schimbări de stare neașteptate la apăsarea butonului.
-#  Instalare:
-  Instalare Biblioteci:
-DHT pentru citirea senzorului DHT11.
-LiquidCrystal_PCF8574 pentru utilizarea LCD-ului I2C.
-ESPAsyncWebServer și AsyncTCP pentru serverul web asincron.
- # Configurare WiFi:
-Modifică variabilele ssid și parola cu informațiile tale de rețea WiFi.
- # Compilare și Încărcare:
-Selectează corect placa și portul în Arduino IDE sau PlatformIO.
-Încarcă codul pe ESP32/ESP8266.
- # Accesare Web:
-După ce ESP-ul se conectează la WiFi, adresa IP a dispozitivului va fi afișată în monitorul serial. Accesează această adresă IP dintr-un browser pentru a vizualiza și controla sistemul.
-  Funcționare:
-Pagina web va actualiza automat datele de temperatură, umiditate, nivel de lumină și stare senzor IR la fiecare 2 secunde.
-Utilizatorul poate controla LED-ul printr-un switch din interfața web. Schimbările vor fi reflectate instantaneu și pe hardware.
-Butonul local poate fi folosit pentru a controla LED-ul și fără acces la interfața web.
+Button to change the LED state
+16x2 LCD with I2C for local data display
+  # Features:
+Temperature and Humidity Monitoring: DHT11 sensor values are displayed both on the LCD and the web interface.
+LED Control: The LED can be turned on or off via the web interface or locally, using a button.
+Light Sensor: The ambient light level is read using an analog light sensor and displayed on the web interface.
+IR Sensor: Detects the presence or absence of objects near the IR sensor.
+Web Interface: Allows monitoring and control of sensors and the LED through a simple web page.
+  # Technical Details:
+WiFi: The project uses WiFi to send data to a web server and enable remote control of the LED.
+HTML/JavaScript: The web interface is built using HTML and JavaScript to update data every 2 seconds, without requiring a page reload.
+Debounce: The code includes a debounce implementation for the physical button, preventing multiple unintended state changes when the button is pressed.
+  # Libraries:
+DHT for reading the DHT11 sensor.
+LiquidCrystal_PCF8574 for using the I2C LCD.
+ESPAsyncWebServer and AsyncTCP for the asynchronous web server.
+  # WiFi Configuration:
+Modify the ssid and password variables with your WiFi network credentials.
+  # Compile and Upload:
+Select the correct board and port in Arduino IDE or PlatformIO.
+Upload the code to your ESP32/ESP8266.
+  # Web Access:
+After the ESP connects to WiFi, its IP address will be displayed in the serial monitor. Access this IP address from a browser to view and control the system.
+  # Operation:
+The web page will automatically update temperature, humidity, light level, and IR sensor status every 2 seconds.
+The user can control the LED through a switch on the web interface. Changes will be reflected instantly on the hardware.
+The local button can also be used to control the LED without accessing the web interface.
